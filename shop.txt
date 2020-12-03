@@ -1,0 +1,9 @@
+10936831;bag;21.04.2017;accessories;1.05
+07836212;hoodie;24.11.2020;clothing;3.08
+14820102;heels;03.05.2020;shoes;3.3
+528173520;socks;24.11.2020;accessories;2.9
+82175931;sleppers;12.12.2008;shoes;0.99
+078333212;dress;21.04.2017;clothing;2.3
+03731292;glasses;23.06.2018;accessories;2.87
+74921741;jeans;21.04.2017;clothing;3.06
+098349582;trainers;24.11.2020;shoes;3.1
