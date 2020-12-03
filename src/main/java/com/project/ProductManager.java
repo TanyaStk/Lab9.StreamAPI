@@ -15,21 +15,25 @@ public class ProductManager {
         products
                 .stream()
                 .collect(Collectors.groupingBy(Product::getDeliveryDate))
-                .entrySet()
-                .stream().parallel()
+                .forEach((key, value) -> System.out.println(
+                        Product.getFormat().format(key) + " - " + value.size()));
+    }
+
+    public void filterByCategory(String category){
+        products.stream()
+                .filter(p -> p.getCategory().equalsIgnoreCase(category))
                 .findAny().ifPresent(System.out::println);
     }
 
     public double countAverageFrequencyInOneCategory(String category) {
-        return products
+        List<Product> listOfFrequencies = products
                 .stream()
                 .filter(p -> p.getCategory().equalsIgnoreCase(category))
-                .reduce(0.0, (x, y) -> x + y.getFrequencyOFSearching(),
-                        Double::sum)
-                / (products
-                .stream()
-                .filter(p -> p.getCategory().equalsIgnoreCase(category))
-                .count());
+                .collect(Collectors.toList());
+        return listOfFrequencies.stream()
+                .reduce(0.0, (x, y) ->
+                        x + y.getFrequencyOFSearching(), Double::sum)
+                / listOfFrequencies.size();
     }
 
     public void sortProductsByNameLength() {

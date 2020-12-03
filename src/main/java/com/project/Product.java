@@ -4,9 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Product {
-    private final SimpleDateFormat
+    private static final SimpleDateFormat
             format = new SimpleDateFormat("dd.MM.yyyy");
-
     private String number;
     private String name;
     private Date deliveryDate;
@@ -63,6 +62,10 @@ public class Product {
 
     public double getFrequencyOFSearching() {
         return frequencyOFSearching;
+    }
+
+    public static SimpleDateFormat getFormat() {
+        return format;
     }
 
     @Override
